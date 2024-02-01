@@ -1,0 +1,7 @@
+
+»
+java:S6548
+"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ÈŒÇ­şÿÿÿÿ8ÇúªÂÓ1
+>	java:S131!""Add a default case to this switch.(ÜŸ•8ÌúªÂÓ1
+^
+java:S34579"AFormat specifiers should be used instead of string concatenation.(ÿ¹8€ğ°Ö1

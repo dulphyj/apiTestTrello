@@ -1,0 +1,9 @@
+
+k
+java:S1192"IDefine a constant instead of duplicating this literal "user.dir" 3 times.(ú‘•Ÿúÿÿÿÿ8ÓîåÖ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ú‘•Ÿúÿÿÿÿ8ìîåÖ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Á¡¡€şÿÿÿÿ8ìîåÖ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(´÷÷´ıÿÿÿÿ8ìîåÖ1
+»
+java:S6548
+"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(¯°ôÚşÿÿÿÿ8íîåÖ1

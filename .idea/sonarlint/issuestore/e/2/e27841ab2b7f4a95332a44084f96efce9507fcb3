@@ -1,0 +1,9 @@
+
+h
+java:S1192&"FDefine a constant instead of duplicating this literal "token" 6 times.(îÒÛøÿÿÿÿ8¯ì¾’Ö1
+»
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(Øõ†ôùÿÿÿÿ8¸ì¾’Ö1
+S
+java:S2696"6Make the enclosing method "static" or remove this set.(‘Óã8ºì¾’Ö1
+X
+java:S2696"6Make the enclosing method "static" or remove this set.(üÊ¿«øÿÿÿÿ8ºì¾’Ö1

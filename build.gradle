@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+}
+
+group = 'api.trello'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    //Cucumber
+    testImplementation group: 'io.cucumber', name: 'cucumber-java', version: '7.6.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-testng', version: '7.6.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: '7.6.0'
+
+    //RestAssured
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.1.1'
+
+    //Jackson
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.13.3'
+
+    //logging
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.2'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha7'
+
+    //Lombok
+    implementation 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+}
+
+test {
+    useTestNG()
+    systemProperty "envId", 'envId'
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task executeFeatures(type: Test) {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            mainClass = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            systemProperty "cucumber.publish.quiet", true
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:reports/cucumber-reports/cucumber-report.html',
+                    '--plugin', 'json:reports/cucumber-reports/CucumberTestReport.json',
+                    '--plugin', 'rerun:reports/cucumber-reports/rerun.txt',
+                    '--glue', 'com.trello',
+                    'src/test/resources/features',
+                    '--tags', cucumberOptions
+            ]
+        }
+    }
+}
